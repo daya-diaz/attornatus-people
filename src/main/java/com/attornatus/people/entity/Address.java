@@ -1,9 +1,8 @@
 package com.attornatus.people.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.UUID;
 
@@ -11,6 +10,9 @@ import java.util.UUID;
 @Table(name = "TB_ADDRESS")
 @AllArgsConstructor
 @NoArgsConstructor
+@SuperBuilder
+@Getter
+@Setter
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

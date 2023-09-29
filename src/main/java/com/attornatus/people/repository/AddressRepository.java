@@ -13,7 +13,7 @@ import java.util.Optional;
 @Repository
 public interface AddressRepository extends JpaRepository<Address, Long> {
     @Query("SELECT a FROM Address a WHERE a.person.externalId = :externalId")
-    List<Address> findAllByPersonExternalId(@Param("ExternalId") String externalId);
+    List<Address> findAllByPersonExternalId(@Param("externalId") String externalId);
 
     @Query("SELECT a FROM Address a WHERE a.main = true and a.person.externalId = :externalId")
     Optional<Address> findMainByPersonExternalId(@Param("externalId") String externalId);
